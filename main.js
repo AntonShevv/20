@@ -5,7 +5,7 @@ const fs = require('fs').promises;
 const userRouter = require('./routes/userRouter');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const usersFilePath = './users.json';
 
 app.engine('hbs', engine({
