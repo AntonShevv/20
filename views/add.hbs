@@ -1,0 +1,38 @@
+<form action="/Add" method="POST" class="user-form" id="addForm">
+    <div class="form-group">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" required placeholder="Введите имя">
+    </div>
+    
+    <div class="form-group">
+        <label for="phoneNumber">Телефон:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="Введите номер телефона">
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-add">Добавить</button>
+        {{{cancelButton}}}
+    </div>
+</form>
+
+<h2>Существующие записи (кнопки-строки заблокированы)</h2>
+
+{{#if users.length}}
+<table class="user-table">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Телефон</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr class="disabled-row">
+            {{> userRow linkable=false name=name phoneNumber=phoneNumber}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p class="no-records">Нет записей</p>
+{{/if}}

@@ -1,0 +1,45 @@
+<h2>Редактирование записи</h2>
+
+<form action="/Update/{{currentUser.id}}" method="POST" class="user-form" id="updateForm">
+    <div class="form-group">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name" value="{{currentUser.name}}" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="phoneNumber">Телефон:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" value="{{currentUser.phoneNumber}}" required>
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-update">Изменить</button>
+        <button type="button" id="deleteBtn" class="btn btn-delete">Удалить</button>
+        {{{cancelButton}}}
+    </div>
+</form>
+
+<h2>Все записи (кнопки-строки заблокированы)</h2>
+
+{{#if users.length}}
+<table class="user-table">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Телефон</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr class="disabled-row">
+            {{> userRow linkable=false name=name phoneNumber=phoneNumber}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p class="no-records">Нет записей</p>
+{{/if}}
+
+<form id="deleteForm" action="/Delete/{{currentUser.id}}" method="POST" style="display: none;"></form>
+
+<script src="/js/update.js"></script>

@@ -1,0 +1,23 @@
+<a href="/Add" class="btn btn-add">Добавить</a>
+
+<h2>Список контактов</h2>
+
+{{#if users.length}}
+<table class="user-table">
+    <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Телефон</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr class="clickable-row">
+            {{> userRow linkable=true id=id name=name phoneNumber=phoneNumber}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p class="no-records">Нет записей</p>
+{{/if}}
