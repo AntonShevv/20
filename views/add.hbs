@@ -1,5 +1,3 @@
-<h2>Существующие записи (кнопки-строки заблокированы)</h2>
-
 {{#if users.length}}
 <div class="contacts-list preview-list">
     {{#each users}}
@@ -17,7 +15,7 @@
 
 <form action="/Add" method="POST" class="user-form">
     <div class="form-group">
-        <label for="name">Фамилия, имя, отчество:</label>
+        <label for="name">ФИО:</label>
         <input type="text" id="name" name="name" required placeholder="Петров В.В.">
     </div>
     
