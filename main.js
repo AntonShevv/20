@@ -51,7 +51,7 @@ app.get('/', async (req, res) => {
         const users = await readUsers();
         res.render('home', { 
             users,
-            title: 'Телефонный справочник'
+            title: 'Lab20'
         });
     } catch (error) {
         console.error(error);
