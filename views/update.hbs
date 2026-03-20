@@ -11,11 +11,9 @@
 <p class="no-records">Нет записей</p>
 {{/if}}
 
-<h2>Редактирование записи</h2>
-
 <form action="/Update/{{currentUser.id}}" method="POST" class="user-form" id="updateForm">
     <div class="form-group">
-        <label for="name">Фамилия, имя, отчество:</label>
+        <label for="name">ФИО:</label>
         <input type="text" id="name" name="name" value="{{currentUser.name}}" required>
     </div>
     

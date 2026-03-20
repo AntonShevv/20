@@ -246,7 +246,6 @@ footer {
     margin-top: 20px;
 }
 
-/* Убираем табличные стили, если они конфликтуют */
 .user-table {
     display: none;
 }
