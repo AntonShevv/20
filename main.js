@@ -50,8 +50,7 @@ app.get('/', async (req, res) => {
     try {
         const users = await readUsers();
         res.render('home', { 
-            users,
-            title: 'Lab20'
+            users
         });
     } catch (error) {
         console.error(error);
@@ -63,8 +62,7 @@ app.get('/Add', async (req, res) => {
     try {
         const users = await readUsers();
         res.render('add', { 
-            users,
-            title: 'Добавление записи'
+            users
         });
     } catch (error) {
         console.error(error);
@@ -122,8 +120,7 @@ app.get('/Update/:id', async (req, res) => {
 
         res.render('update', { 
             users,
-            currentUser,
-            title: 'Редактирование записи'
+            currentUser
         });
     } catch (error) {
         console.error(error);

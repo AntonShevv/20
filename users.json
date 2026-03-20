@@ -1,17 +1,17 @@
 [
   {
     "id": 1,
-    "name": "testyyi",
-    "phoneNumber": "3223"
+    "name": "Петров В.В.",
+    "phoneNumber": "2311512441"
   },
   {
     "id": 2,
-    "name": "qwe",
-    "phoneNumber": "233"
+    "name": "Федоров Ф.Ф.",
+    "phoneNumber": "3123156324"
   },
   {
     "id": 3,
-    "name": "test",
-    "phoneNumber": "23"
+    "name": "Павлов П.П.",
+    "phoneNumber": "3424234244"
   }
 ]
