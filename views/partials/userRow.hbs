@@ -1,7 +1,13 @@
 {{#if linkable}}
-<td><a href="/Update/{{id}}" class="row-link">{{name}}</a></td>
-<td><a href="/Update/{{id}}" class="row-link">{{phoneNumber}}</a></td>
+<div class="contact-card">
+    <a href="/Update/{{id}}" class="contact-link">
+        <span class="contact-name">{{name}}</span>
+        <span class="contact-phone">{{phoneNumber}}</span>
+    </a>
+</div>
 {{else}}
-<td class="disabled-cell">{{name}}</td>
-<td class="disabled-cell">{{phoneNumber}}</td>
+<div class="contact-card disabled">
+    <span class="contact-name">{{name}}</span>
+    <span class="contact-phone">{{phoneNumber}}</span>
+</div>
 {{/if}}

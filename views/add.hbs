@@ -1,38 +1,33 @@
-<form action="/Add" method="POST" class="user-form" id="addForm">
+<h2>Существующие записи (кнопки-строки заблокированы)</h2>
+
+{{#if users.length}}
+<div class="contacts-list preview-list">
+    {{#each users}}
+    <div class="contact-card disabled">
+        <span class="contact-name">{{name}}</span>
+        <span class="contact-phone">{{phoneNumber}}</span>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<p class="no-records">Нет записей</p>
+{{/if}}
+
+<h2>Добавление новой записи</h2>
+
+<form action="/Add" method="POST" class="user-form">
     <div class="form-group">
-        <label for="name">Имя:</label>
-        <input type="text" id="name" name="name" required placeholder="Введите имя">
+        <label for="name">Фамилия, имя, отчество:</label>
+        <input type="text" id="name" name="name" required placeholder="Петров В.В.">
     </div>
     
     <div class="form-group">
         <label for="phoneNumber">Телефон:</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="Введите номер телефона">
+        <input type="text" id="phoneNumber" name="phoneNumber" required placeholder="22233344">
     </div>
     
     <div class="form-actions">
         <button type="submit" class="btn btn-add">Добавить</button>
-        {{{cancelButton}}}
+        <a href="/" class="btn btn-cancel">Отказаться</a>
     </div>
 </form>
-
-<h2>Существующие записи (кнопки-строки заблокированы)</h2>
-
-{{#if users.length}}
-<table class="user-table">
-    <thead>
-        <tr>
-            <th>Имя</th>
-            <th>Телефон</th>
-        </tr>
-    </thead>
-    <tbody>
-        {{#each users}}
-        <tr class="disabled-row">
-            {{> userRow linkable=false name=name phoneNumber=phoneNumber}}
-        </tr>
-        {{/each}}
-    </tbody>
-</table>
-{{else}}
-<p class="no-records">Нет записей</p>
-{{/if}}

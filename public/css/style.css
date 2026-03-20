@@ -192,3 +192,61 @@ footer {
     text-align: center;
     color: #777;
 }
+
+/* Стили для списка контактов как на скриншотах */
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.contact-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0;
+    background-color: white;
+    display: flex;
+    align-items: stretch;
+}
+
+.contact-card a.contact-link {
+    display: flex;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.contact-card.disabled {
+    background-color: #f0f0f0;
+    color: #666;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.contact-name, .contact-phone {
+    padding: 12px 15px;
+    flex: 1;
+}
+
+.contact-name {
+    font-weight: 500;
+    border-right: 1px solid #ddd;
+}
+
+.contact-phone {
+    color: #555;
+}
+
+.preview-list .contact-card {
+    margin-top: 5px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+/* Убираем табличные стили, если они конфликтуют */
+.user-table {
+    display: none;
+}
